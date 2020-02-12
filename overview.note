@@ -1,0 +1,62 @@
+# Untitled Sound Programming Language
+Based on ChucK
+
+## Types
+
+integer
+fraction
+decimal
+complex
+polar
+string
+time
+duration
+event
+function
+procedure
+array
+object
+
+## Time
+
+The smallest atom of duration is a `sample`.
+Time is synchronous with regard to the sample.
+Time can be advanced in terms of samples (including fractions), or seconds, or minutes, etc/
+A sample will be defined in terms of time (seconds/ milliseconds)
+
+`time` - `time` = `dur`
+`time` + `dur` = `time`
+`dur` + `dur` = `dur`
+`dur` - `dur` = `dur`
+`dur` / `dur` = `number`
+`time` % `dur` = `dur`
+
+
+`wait(dur)`
+`wait(event)`
+`wait(time)`
+
+## Control Flow
+
+### Loops
+```
+loop
+end
+while CONDITION
+end
+until CONDITION
+end
+for 
+```
+
+### Condition
+```
+if CONDITION
+end
+
+
+```
+
+## Runner
+
+See {runner_example.kt}.
