@@ -25,6 +25,19 @@ class BerryProcess
     end
 
     # TODO: Define WITH_FX here and add it to the process's cache
+    # def with_fx(fx_class, fx_name: nil, &block)
+    #     fx_name = fx_class.to_sym if fx_name.nil?
+    #     if Thread.current[:cache][fx_name]
+    #         fx_obj = Thread.current[:cache][fx_name]
+    #     else
+    #         # fx_obj = fx_class.new
+    #         # TODO: setup new instance of FX object
+    #         Thread.current[:cache][fx_name] = fx_obj unless fx_name.nil?
+    #     end
+    #     Thread.current[:fx].push(fx_obj)
+    #     block.call
+    #     Thread.current[:fx].pop
+    # end
 
     def finished?
         @finished
