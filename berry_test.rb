@@ -22,13 +22,15 @@ end
 
 
 def advance(time, units=:samples)
+    SAMPLES_PER_SECOND = 1
+    SECONDS_PER_MINUTE = 60
     case units
     when :samples, :sample
         condition = DurationWaitCondition.new(BerryDuration.new(time))
     when :seconds, :second, :s
         condition = DurationWaitCondition.new(BerryDuration.new(time * SAMPLES_PER_SECOND))
     when :minutes, :minute, :m
-        condition = DurationWaitCondition.new(BerryDuration.new(time * SAMPLES_PER_SECOND * 60))
+        condition = DurationWaitCondition.new(BerryDuration.new(time * SAMPLES_PER_SECOND * SECONDS_PER_MINUTE))
     end
     Fiber.yield condition
 end
